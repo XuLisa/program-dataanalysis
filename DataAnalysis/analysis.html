@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Google fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+		<style>
+			.wave-mask {/*
+				position: absolute;*/
+				width: 200px;
+				height: 200px;/*
+				top: 200px;
+				left: 87%;*/
+				border-radius: 40%;
+				background-color: rgba(91, 192, 222, 0.9);
+				transform: translate(-50%, -70%) rotate(0);
+				animation: toRotate 10s linear -5s infinite;
+				z-index: 20;
+			}
+			@keyframes toRotate {
+				50% {
+					transform: translate(-50%, -70%) rotate(180deg);
+				}
+				100% {
+					transform: translate(-50%, -70%) rotate(360deg);
+				}
+			}
+			#file_name{
+				width: 400px;
+				height: 40px;
+			}
+			a.input {
+				width:70px;
+				height:40px;
+				line-height:30px;
+				background:#3091d1;
+				text-align:center;
+				display:inline-block;/*具有行内元素的视觉，块级元素的属性 宽高*/
+				overflow:hidden;/*去掉的话，输入框也可以点击*/
+				position:relative;/*相对定位，为 #file 的绝对定位准备*/
+				top:15px;
+				border-radius: 10%;
+				justify-content: center;
+				padding-top: 5px;
+			}
+			a.input:hover {
+				background:#31b0d5;
+				color: #ffffff;
+			}
+			a{
+				text-decoration:none;
+				color:#FFF;
+			}
+			#file {
+				opacity:0;/*设置此控件透明度为零，即完全透明*/
+				filter:alpha(opacity=0);/*设置此控件透明度为零，即完全透明针对IE*/
+				font-size:100px;
+				position:absolute;/*绝对定位，相对于 .input */
+				top:0;
+				right:0;
+			}
+			
+			.ance:hover{
+				text-decoration: underline;
+				color:#00bfff;
+				cursor: pointer;
+			}
+			.file-sub:hover{
+				
+					text-decoration: underline;
+				cursor: pointer;
+			}
+		</style>
+  </head>
+  <body>
+    <div class="page" id="main">
+      <header class="header">
+        <nav class="navbar">
+          <!-- Search Box-->
+          <div class="search-box">
+            <button class="dismiss"><i class="icon-close"></i></button>
+            <form id="searchForm" action="#" role="search">
+              <input type="search" placeholder="What are you looking for..." class="form-control">
+            </form>
+          </div>
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <!-- Navbar Header-->
+              <div class="navbar-header">
+                <!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
+                  <div class="brand-text d-none d-lg-inline-block"><span>Data </span><strong>Analysis</strong></div>
+                  <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div></a>
+                <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+              </div>
+              <!-- Navbar Menu -->
+              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                <!-- Search-->
+                <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
+                <!-- Notifications-->
+                <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">12</span></a>
+                  <ul aria-labelledby="notifications" class="dropdown-menu">
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                        <div class="notification">
+                          <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6 new messages </div>
+                          <div class="notification-time"><small>4 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                        <div class="notification">
+                          <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                          <div class="notification-time"><small>4 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                        <div class="notification">
+                          <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
+                          <div class="notification-time"><small>4 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                        <div class="notification">
+                          <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                          <div class="notification-time"><small>10 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
+                  </ul>
+                </li>
+                <!-- Messages                        -->
+                <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange badge-corner">10</span></a>
+                  <ul aria-labelledby="notifications" class="dropdown-menu">
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                        <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-body">
+                          <h3 class="h5">Jason Doe</h3><span>Sent You Message</span>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                        <div class="msg-profile"> <img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-body">
+                          <h3 class="h5">Frank Williams</h3><span>Sent You Message</span>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                        <div class="msg-profile"> <img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-body">
+                          <h3 class="h5">Ashley Wood</h3><span>Sent You Message</span>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
+                  </ul>
+                </li>
+                <!-- Languages dropdown    -->
+                <!-- <li class="nav-item dropdown"><a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle"><img src="img/flags/16/GB.png" alt="English"><span class="d-none d-sm-inline-block">English</span></a>
+                  <ul aria-labelledby="languages" class="dropdown-menu">
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/DE.png" alt="English" class="mr-2">German</a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/FR.png" alt="English" class="mr-2">French                                         </a></li>
+                  </ul>
+                </li> -->
+                <!-- Logout    -->
+                <li class="nav-item"><a href="login.html?token_clear=1" class="nav-link logout"> <span class="d-none d-sm-inline">退出</span><i class="fa fa-sign-out"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="page-content d-flex align-items-stretch">
+        <nav class="side-navbar">
+          <!-- Sidebar Header-->
+          <div class="sidebar-header d-flex align-items-center">
+            <div class="avatar"><img src="img/ANEW/school.jpg" alt="..." class="img-fluid rounded-circle"></div>
+            <div class="title">
+              <h1 class="h4">Mark Stephen</h1>
+              <p>Web Designer</p>
+            </div>
+          </div>
+          <!-- Sidebar Navidation Menus-->
+		  <!-- <span class="heading">Main</span> -->
+          <ul class="list-unstyled">
+                    <li class="active"><a href="index.html"> <i class="icon-home"></i>主页 </a></li>
+                    <li><a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
+                    <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
+                    <li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
+                    <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example dropdown </a>
+                      <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                        <li><a href="#">Page</a></li>
+                        <li><a href="#">Page</a></li>
+                        <li><a href="#">Page</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="login.html"> <i class="icon-interface-windows"></i>Login page </a></li>
+          <!-- </ul>
+		   <span class="heading">Extras</span> 
+          <ul class="list-unstyled">
+          -->  <li> <a href="#"> <i class="icon-flask"></i>Demo </a></li>
+            <li> <a href="#"> <i class="icon-screen"></i>Demo </a></li>
+            <li> <a href="#"> <i class="icon-mail"></i>Demo </a></li>
+            <li> <a href="#"> <i class="icon-picture"></i>Demo </a></li>
+          </ul>
+        </nav>
+        <div class="content-inner">
+          <!-- Page Header-->
+          <header class="page-header">
+            <div class="container-fluid">
+				<input  placeholder="Search"  style="border: 0px solid;width: 100%;height: 100%;font-size:120%;"/><!-- 
+              <h2 class="no-margin-bottom">Dashboard</h2> -->
+            </div>
+          </header>
+          <!-- Projects Section-->
+          
+		  <section class="client no-padding-top" style="margin-top: 50px;">
+		    <div class="container-fluid">
+		      <div class="row">
+				<div class="col-lg-5" style="height: auto;">
+				  <div class="card">
+				    <div class="card-close">
+				      <div class="dropdown">
+				        <button type="button" id="closeCard1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+				        <div aria-labelledby="closeCard1" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+				      </div>
+				    </div>
+				    <div class="card-header d-flex align-items-center">
+				      <h3 class="h4">公告</h3>
+				    </div>
+				    <div class="card-body">
+				      <div class="table-responsive">
+				        <table class="table" style="height:300px">
+				          <thead>
+				            <tr>
+				              <th>ID</th>
+				              <th>标题</th>
+				              <th>日期</th>
+				            </tr>
+				          </thead>
+				          <tbody>
+				            <tr v-for="item in ances">
+				              <th scope="row" v-text="item.id"></th>
+				              <td class="ance" style="width:50px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;" v-text="item.title"></td>
+				              <td  v-text="item.date"></td>
+				            </tr>
+				          </tbody>
+				        </table>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+		        <div class="col-lg-5" style="height: 100%;">
+		          <div class="card">
+		            <div class="card-close">
+		              <div class="dropdown">
+		                <button type="button" id="closeCard12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+		                <div aria-labelledby="closeCard1" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+		              </div>
+		            </div>
+		            <div class="card-header d-flex align-items-center">
+		              <h3 class="h4">消息</h3>
+		            </div>
+		            <div class="card-body">
+		              <div class="table-responsive">
+		                <table class="table" >
+		                  <thead>
+		                    <tr>
+		                      <th>ID</th>
+		                      <th>标题</th>
+		                      <th>日期</th>
+		                    </tr>
+		                  </thead>
+		                  <tbody>
+		                    <tr v-for="item in ances">
+		                      <th scope="row" v-text="item.id"></th>
+		                      <td class="ance" style="width:50px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;" v-text="item.title"></td>
+		                      <td  v-text="item.date"></td>
+		                    </tr>
+		                  </tbody>
+		                </table>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+				<div class="col-lg-2">
+				  <div class="overdue card">
+				    <div class="card-close">
+				      <div class="dropdown">
+				        <button type="button" id="closeCard3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+				        <div aria-labelledby="closeCard3" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+				     </div>
+				    </div>
+					<div class="card-header d-flex align-items-center">
+					  <h3 class="h4">剩余次数</h3>
+					</div>
+				    <div class="card-body"><small style="color: red;">这里可以加些说明!!</small>
+				      <div style="overflow: hidden;z-index:98;width: 150px;height: 150px;border-radius: 50%;border: 3px solid #5BC0DE;background: #ffffff;margin-top:60%;margin-left:50%;transform: translate(-50%, -50%);padding: 10px;">
+				      	<div style="z-index:100;position:absolute;margin-top:12%;margin-left:20%;font-size: 400%">
+				      	15
+				      	</div>
+				      	<div style="width: 130px;height: 130px;background-image: linear-gradient(-180deg, #aaff80 13%, #5BC0DE 91%);border-radius: 50%;position:absolute;margin-top:-2%;margin-left:-2%;">
+				      	</div>
+				      	<div class="wave-mask" style="z-index:99;margin-top: 30%;margin-left: 45%;background-color: rgba(255, 255, 255, 0.9);"></div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			  </div>
+		    </div>
+		  </section>
+		  <section class="projects no-padding-top">
+			 <!-- <div style="margin-left: 55%;">
+			  	<input name="file" type="text" id="file_name" readonly="readonly"  :value="file_name_chosen" />
+			  	<a href="javascript:void(0);" class="input"><span style="font-size: 15px">上传文件</span>
+			  	<input type="file" id="file" @change="get_file_name($event)" >
+			  	</a>
+			  </div> -->
+            <div class="container-fluid">
+				<div class="project">
+				  <div class="row bg-white has-shadow">
+				    <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
+				      <div class="project-title d-flex align-items-center">
+				        <div class="text">
+				          <h3 class="h4"></h3><small></small>
+				        </div>
+				      </div>
+				      <div class="project-date"><span class="hidden-sm-down"></span></div>
+				    </div>
+				    <div class="right-col col-lg-6 d-flex align-items-center" style="display: flex;flex-direction: row; justify-content: center;">
+									 	<input name="file" type="text" id="file_name" readonly="readonly"  :value="file_name_chosen" />
+									 	<span class="file-sub btn btn-primary" style="margin-left:10px;font-size: 15px">上传文件</span>
+										<input  type="file" id="file" @change="get_file_name($event)" style="background-color: palevioletred;" value="上传文件">
+										<!-- 
+									 	<input type="file" id="file" @change="get_file_name($event)" value="上传文件">
+										 --></div>
+				  </div>
+				</div>
+              <!-- Project-->
+              <div class="project" v-for="item in files_history" >
+                <div class="row bg-white has-shadow">
+                  <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
+                    <div class="project-title d-flex align-items-center">
+                      <div class="image has-shadow"><img src="img/project-1.jpg" alt="..." class="img-fluid"></div>
+                      <div class="text">
+                        <h3 class="h4">{{item.file_name}}</h3><small>{Lorem Ipsum Dolor}</small>
+                      </div>
+                    </div>
+                    <div class="project-date"><span class="hidden-sm-down">{{item.upload_time}}</span></div>
+                  </div>
+                  <div class="right-col col-lg-6 d-flex align-items-center"><!-- 
+                    <div class="time"><i class="fa fa-clock-o"></i>12:00 PM </div>
+                    <div class="comments"><i class="fa fa-comment-o"></i>20</div> -->
+                    <!-- <div class="project-progress">
+                      <div class="progress">
+                        <div role="progressbar" style="width: 45%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-red"></div>
+                      </div>
+                    </div> -->
+					<div style="margin-left: 40%;">
+						
+						<button type="button" class="btn btn-info btn-sm" @click="file_delete(item.file_id)">删除</button>
+					</div>
+					<div style="margin-left: 50px;">
+						<button type="button" class="btn btn-info btn-sm demo0" @click="show_jump_data(item.file_id)">分析结果</button>
+					</div>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </section>
+         
+          <footer class="main-footer">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6">
+                  <p>Copyright &copy; 2019.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+                </div>
+                <div class="col-sm-6 text-right">
+                  <p></p>
+                  <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+	  <div id="HBox" class="jump_div">
+	  	<div style="margin-top:50px;color: #000000;display: flex;flex-direction:row;">
+	  		<table class="table table-bordered table-striped" >
+	  			<thead>
+	  				<tr>
+	  					<td>文件名</td>
+	  					<td>展示类型</td>
+	  					<td>开始时间</td>
+	  					<td>结束时间</td>
+	  					<td>操作</td>
+	  				</tr>
+	  			</thead>
+	  			<tbody>
+	  				<tr>
+	  					<td style="font-size:18px" v-text="jumpdiv_data[0].res_name"></td>
+	  					<td style="font-size:18px" v-text="tellType(jumpdiv_data[0].status)"></td>
+	  					<td style="font-size:18px" v-text="jumpdiv_data[0].ana_time"></td>
+	  					<td style="font-size:18px" v-text="jumpdiv_data[0].res_time"></td>
+	  					<td style="font-size:18px"><button type="button" class="btn btn-info btn-sm" @click="anaDetail(jumpdiv_data[0].id)">查看详细</button></td>
+	  				</tr>
+	  			</tbody>
+	  		</table>
+	  	</div>
+	  
+	  </div>
+	  
+    </div>
+    </div>
+	
+	
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="js/charts-home.js"></script>
+    <script src="js/front.js"></script>
+  </body>
+</html>
+<script src="js/vue.js"></script>
+<script>
+	var vm= new Vue({
+		el:"#main",
+		data:{
+			file_name_chosen:"请选择文件",
+		    ances:[
+				  {id:1,title:"联得装备:东方花旗证券有限公司关于公司",date:"08-29"},
+				  {id:2,title:"怡达股份:独立董事对第三届董事会第十一",date:"08-29"},
+				  {id:3,title:"九洲电气:收到黑龙江省发展和改革委员会",date:"08-29"},
+				  {id:4,title:"九洲电气:收到黑龙江省发展和改革委员会",date:"08-29"},
+				  {id:3,title:"九洲电气:收到黑龙江省发展和改革委员会",date:"08-29"}
+				  ],
+			personal_msg:null,
+			percent_top:"top:"+20+"%;",
+			files_history:[],
+			token:localStorage.token_analysis,
+			file:null,
+			jumpdiv_data:[{"res_name":"","id":"","ana_time":"","res_time":"","res_status":""}]	
+		},
+		methods:{
+			tellType:function(status){
+				console.log(status)
+				if(status=="1"){
+					return "饼图"
+				}
+				else if(status=="2"){
+					return "热力图"
+				}
+				else{
+					return "地图"
+				}
+			},
+			show_jump_data:function(id){
+				var that=this
+				console.log(id)
+				$.ajax({
+						url:"http://139.9.175.190/ana/one_all?file_id="+id,
+						dataType:'json',
+						type:'get',
+						async: false,
+						data:{},
+						processData : false, // 使数据不做处理
+						contentType : false, // 不要设置Content-Type请求头	
+						headers: {
+								"Authorization":that.token,
+								},
+						error:function(xhr,err,err2){
+							console.log(xhr,err,err2)
+							if(xhr.status == 401)
+							{
+								alert("登录过期，请重新登陆!")
+								window.location.href="login.html";
+							}
+							else{
+								console.log(xhr.status)
+							}
+						},
+						success: function(data){
+								console.log(data);
+								that.jumpdiv_data=data
+						    }
+					})
+			},
+			personal_analysis:function(file_id,file_name){
+				localStorage.setItem("file_id",file_id);
+				localStorage.setItem("file_name",file_name);/*存跳转后需要的id*/
+				window.location.href="personal_analysis.html";
+			},
+		    
+			show_choice:function () {
+	
+	        },
+			show_result:function () {
+	
+	        },
+			choose_color:function (num) {/*文件格式背景*/
+				return num%2==0?"background-color:#dcdcdc;":"";
+	        },
+			get_files_history:function function_name () {/*获取历史文件*/
+				var that=this
+				$.ajax({
+						url:"http://139.9.175.190/file/one_all",
+						dataType:'json',
+						type:'get',
+						async: false,
+						data:{},
+						processData : false, // 使数据不做处理
+						contentType : false, // 不要设置Content-Type请求头	
+						headers: {
+								"Authorization":that.token,
+								},
+						error:function(xhr,err,err2){
+							if(xhr.status == 401)
+							{
+								alert("登录过期，请重新登陆!")
+								window.location.href="login.html";
+							}
+							else{
+								console.log(xhr.status)
+							}
+						},
+						success: function(data){
+								console.log(data);
+								that.files_history=data;
+						    }
+					})
+			},
+			get_file_name:function(event){/*上传文件*/
+				console.log(event.target.files);
+				this.file_name_chosen=event.target.files[0].name;
+				file=event.target.files[0]
+				console.log(file)
+				var formData = new FormData();
+				formData.append("myfile",event.target.files[0]);
+				var file_name=prompt("请输入文件名！")
+				if(file_name!=null)
+				{
+					if(confirm("确认上传文件？这将消耗一次使用次数"))
+					{
+					var that = this
+					formData.append("file_name",file_name)
+					$.ajax({
+					        url:"http://139.9.175.190/file/upload",
+					        dataType:'text',
+					        type:'post',
+					        async: false,
+					        data:formData ,
+					        processData : false, // 使数据不做处理
+					        contentType : false, // 不要设置Content-Type请求头
+							headers: {
+									"Authorization":that.token,
+									},
+							error:function(xhr,err,err2){
+								if(xhr.status == 401)
+								{
+									alert("登录过期，请重新登陆!")
+									window.location.href="login/login.html";
+								}
+								else{
+									console.log(xhr.status)
+								}
+							},
+					        success: function(data){
+					            console.log(data);
+					            if (data == 'success') {
+					                alert('上传成功！');
+									that.get_files_history()
+					            }
+								else if(data == "error")
+								{
+									alert("参数失败!")
+								}
+								else if(data=="type error")
+								{
+					                alert('仅允许上传"txt", "csv", "xsl"三种文件类型!');
+					            }
+								else if(data == "failed")
+								{
+									alert("上传失败!")
+								}
+					        },
+					    })
+					}
+					else{
+						alert("文件上传取消!")
+					}
+				}
+				else{
+					console.log(file_name)
+					alert("请输入文件名后上传!");
+				}
+			},
+			file_delete:function(file_id){
+				if(confirm("确认删除?"))
+				{
+				var that = this
+				var formData = new FormData();
+				formData.append("file_id",file_id);
+				console.log(file_id)
+				$.ajax({
+						        url:"http://139.9.175.190/file/delete",
+						        dataType:'text',
+						        type:'post',
+						        async: false,
+						        data:formData,
+						        processData : false, // 使数据不做处理
+						        contentType : false, // 不要设置Content-Type请求头
+								headers: {
+										"Authorization":that.token
+										},
+						        success: function(data){
+						            console.log(data);
+									if(	data=="error")
+									{
+										alert("参数不全!")
+									}
+									else if(data=="not exist"){
+										alert("文件不存在!")
+									}
+									else if(data=="auth error"){
+										alert("权限错误!")
+									}
+									else if(data=="failed"){
+										alert("删除失败!")
+									}
+									else
+									{
+										alert("删除成功!")
+										that.get_files_history()
+									}
+									}
+						    }) 
+			}
+			}
+		},
+		created:function () { 
+			this.get_files_history()
+			console.log(this.token)
+	    }
+	})
+	
+</script>
+	
+<script src="js_xuanfu/jquery.hDialog.js"></script>
+<script>
+		$(function(){
+		
+			var $el = $('.dialog');
+		
+			$el.hDialog();
+			//带标题的
+		
+			$('.demo0').hDialog({width: 800,height:440});
+		
+		
+			$('.demo10').click(function(){
+		
+				$.tooltip('My God, 出错啦！！！');
+		
+			});
+			//正确文字提示
+		
+			$('.demo11').click(function(){
+		
+				$.tooltip('OK, 操作成功！', 2500, true);
+		
+			});
+			//显示加载
+		
+			$('.demo12').click(function(){
+		
+				//自定义文字： $.showLoading('玩命加载中...');
+		
+				//自定义宽高： $.showLoading('努力加载中...',140,40);
+		
+				$.showLoading();
+		
+			});
+			//移除加载
+		
+			$('.demo13').click(function(){
+		
+				$.hideLoading();
+		
+			});
+			//显示前的回调方法
+		
+			$('.demo14').hDialog({beforeShow: function(){
+		
+				alert('显示前执行');
+		
+			}});
+			//隐藏后的回调方法
+		
+			$('.demo15').hDialog({afterHide: function(){
+		
+				alert('隐藏后执行');
+		
+			}});
+			//fadeOut淡出关闭效果
+		
+			$('.demo16').hDialog({effect: 'fadeOut'});
+			//悬浮触发
+		
+			$('.demo17').hDialog({triggerEvent: 'mouseenter'});
+			//不显示关闭按钮
+		
+			$('.demo18').hDialog({closeHide: false});
+			//返回顶部
+		
+			$.goTop();
+			});
+		
+	</script>

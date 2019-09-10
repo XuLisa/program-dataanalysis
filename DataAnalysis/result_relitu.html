@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>详细数据_热力图DataAnalysis</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Google fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+	
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	
+	<script type="text/javascript" src="show/echarts.min.js"></script>
+	<script type="text/javascript" src="show/china.js"></script>
+	<style>
+		.tbls_control:hover{
+			cursor: pointer;
+		}
+		.type_pic:hover{
+			cursor: pointer;
+		}
+		.p_style{
+			width: 280px;height:200px;float: left;
+		}
+	</style>
+		
+  </head>
+  <body>
+    <div class="page" id="main">
+      <!-- Main Navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <!-- Search Box-->
+          <div class="search-box">
+            <button class="dismiss"><i class="icon-close"></i></button>
+            <form id="searchForm" action="#" role="search">
+              <input type="search" placeholder="What are you looking for..." class="form-control">
+            </form>
+          </div>
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <!-- Navbar Header-->
+              <div class="navbar-header">
+                <!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
+                  <div class="brand-text d-none d-lg-inline-block"><span>Data </span><strong>Analysis</strong></div>
+                  <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div></a>
+                <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+              </div>
+              <!-- Navbar Menu -->
+              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                <!-- Search-->
+                <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
+                <!-- Notifications-->
+                <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">12</span></a>
+                  <ul aria-labelledby="notifications" class="dropdown-menu">
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                        <div class="notification">
+                          <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6 new messages </div>
+                          <div class="notification-time"><small>4 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                        <div class="notification">
+                          <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                          <div class="notification-time"><small>4 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                        <div class="notification">
+                          <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
+                          <div class="notification-time"><small>4 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
+                        <div class="notification">
+                          <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                          <div class="notification-time"><small>10 minutes ago</small></div>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
+                  </ul>
+                </li>
+                <!-- Messages                        -->
+                <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange badge-corner">10</span></a>
+                  <ul aria-labelledby="notifications" class="dropdown-menu">
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                        <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-body">
+                          <h3 class="h5">Jason Doe</h3><span>Sent You Message</span>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                        <div class="msg-profile"> <img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-body">
+                          <h3 class="h5">Frank Williams</h3><span>Sent You Message</span>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
+                        <div class="msg-profile"> <img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-body">
+                          <h3 class="h5">Ashley Wood</h3><span>Sent You Message</span>
+                        </div></a></li>
+                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
+                  </ul>
+                </li>
+                <li class="nav-item"><a href="login.html?token_clear=1" class="nav-link logout"> <span class="d-none d-sm-inline">退出</span><i class="fa fa-sign-out"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="page-content d-flex align-items-stretch"> 
+        <!-- Side Navbar -->
+        <nav class="side-navbar shrinked">
+          <!-- Sidebar Header-->
+          <div class="sidebar-header d-flex align-items-center">
+            <div class="avatar"><img src="img/ANEW/school.jpg" alt="..." class="img-fluid rounded-circle"></div>
+            <div class="title">
+              <h1 class="h4">TKK</h1>
+			  <p>开会都在YHT</p>
+            </div>
+          </div>
+          <ul class="list-unstyled">
+              <li class="active"><a href="index.html"> <i class="icon-home"></i>主页 </a></li>
+              <li><a href="#"> <i class="icon-grid"></i>用户数据分析 </a></li>
+              <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>个性化 </a></li>
+              <li><a href="#"> <i class="icon-padnote"></i>用户画像 </a></li>
+              <li><a href="settings.html"> <i class="icon-interface-windows"></i>设置 </a></li>
+          
+          </ul>
+        </nav>
+        <div class="content-inner active">
+          <!-- Page Header-->
+          <header class="page-header">
+            <div class="container-fluid">
+          				<input  placeholder="Search"  style="border: 0px solid;width: 100%;height: 100%;font-size:120%;"/><!-- 
+              <h2 class="no-margin-bottom">Dashboard</h2> -->
+            </div>
+          </header>
+          <!-- Breadcrumb-->
+          <div class="breadcrumb-holder container-fluid">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">主页</a></li>
+              <li class="breadcrumb-item active">分析结果            </li>
+            </ul>
+          </div>
+          <!-- Charts Section-->
+          <section class="charts" style="padding: 0px;">
+			<div class="container-fluid" >
+				<div class="row" id="data_div">
+					<div class="col-lg-12">
+					  <div class="card">
+					    <div class="card-header d-flex align-items-center">
+					      <h3 class="h4">文件信息</h3>
+					    </div>
+					    <div class="card-body">
+					      <div class="table-responsive">
+					        <table class="table text-center" style="font-size: 1.2rem;">
+					          <thead>
+					            <tr>
+					              <th style="text-align: center;" width="20%">开始时间</th>
+					              <th style="text-align: center;" width="20%">数据来源文件</th>
+					              <th style="text-align: center;" width="20%">分析文件名</th>
+					              <th style="text-align: center;" width="20%">分析依据</th>
+					              <th style="text-align: center;" width="20%">结束时间</th>
+					            </tr>
+					          </thead>
+					          <tbody>
+					            <tr>
+									<td id="ana_time"></td>
+									<td id="file_name"></td>
+									<td id="res_name"></td>
+									<td>
+										<button type="button" class="btn btn-primary demo0">查看</button>
+									</td>
+									<td id="res_time"></td>
+					            </tr>
+					          </tbody>
+					        </table>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="card-header d-flex align-items-center">
+							  <h3 class="h4">分析结果</h3>
+							</div>
+							<div class="card-body">
+							  <div class="table-responsive" id="reli_container" style="height: auto;display: flex;flex-direction: row;flex-wrap: wrap;">
+							    
+								
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+          </section>
+          
+        </div>
+      </div>
+    </div>
+	<div id="HBox" class="jump_div col-lg-12" style="display: none;">
+		<div style="margin-top:50px;color: #000000;display: flex;flex-direction:row;">
+			<table class="table table-bordered table-striped text-center" style="font-size: 1.5rem;">
+				
+				<tbody>
+					<tr>
+						<td>开始时间</td>
+						<td v-text="starttime"></td>
+					</tr>
+					<tr>
+						<td>结束时间</td>
+						<td v-text="endtime"></td>
+					</tr>
+					<tr>
+						<td>分类</td>
+						<td v-text="type_c"></td>
+					</tr> 
+					<tr>
+						<td>地区</td>
+						<td v-html="ps"></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+    <script src="vendor/jquery/jquery.min.js"></script>
+	
+	
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="js/front.js"></script>
+	
+  </body>
+</html>
+<script src="js/vue.js"></script>
+<script>
+	var v1 = new Vue({
+		el:"#HBox",
+		data:{
+			according:null,
+			ps:null,
+			endtime:null,
+			starttime:null,
+			type_c:null
+		},
+		methods:{
+			
+		}
+	})
+	let main_data;
+	var md_data=[]
+	
+	var formData = new FormData()
+	formData.append("id", localStorage.res_id_relitu)
+	$.ajax({
+	url:"http://139.9.175.190/ana/res_data",
+	dataType:'json',
+	type:'post',
+	async: false,
+	data:formData,
+	processData : false,
+	contentType : false, 
+	headers: {
+			"Authorization":localStorage.token_analysis,
+			},
+	error:function(xhr,err,err2){
+		console.log(xhr,err,err2)
+		if(xhr.status == 401)
+		{
+			alert("登录过期，请重新登陆!")
+			window.location.href="login.html";
+		}
+		else{
+			console.log(xhr.status)
+		}
+	},
+	success: function(data){
+		console.log(data)
+		alldata = data
+		$("#ana_time").text(alldata.ana_time)
+		$("#file_name").text(alldata.file_name)
+		$("#res_name").text(alldata.res_name)
+		v1.according=eval('(' + alldata.parameter + ')')
+		$("#res_time").text(alldata.res_time)
+		main_data = eval('(' + alldata.data + ')')
+		var ps = ""
+		var type_c=""
+		for(var i =0 ;i<Object.keys(v1.according.地区).length;i++)
+		{
+			ps+=v1.according.地区[i]+" "
+			if((i+1)%6==0)
+			{
+				ps+="</br>"
+			}
+		}
+		for(var i =0 ;i<Object.keys(v1.according.分类).length;i++)
+		{
+			type_c+=v1.according.分类[i]+" "
+		}
+		v1.ps=ps;
+		v1.type_c=type_c;
+		v1.starttime=v1.according.时间[0]
+		v1.endtime=v1.according.时间[1]
+		console.log(ps)
+		
+		console.log(main_data)
+		md_data[main_data[0]['0'].substr(0,7)]=[]/*设置第一个月,第一个月肯定没有*/
+		for(var i = 0;i<Object.keys(main_data).length;i++)/*记录所有年月*/
+		{
+			for(var j=0;j<Object.keys(md_data).length;j++)
+			{
+				if(Object.keys(md_data)[j].toString()==main_data[i]['0'].substr(0,7))
+				{
+					break;
+				}
+				else if(j==(Object.keys(md_data).length-1)&&Object.keys(md_data)[j].toString()!=main_data[i]['0'].substr(0,7))
+				{
+					md_data[main_data[i]['0'].toString().substr(0,7)]=[]
+				}
+			}
+		}
+		console.log(md_data)
+		var arr=[]
+		for(var i=0;i<Object.keys(md_data).length;i++)
+		{
+			arr.push(Object.keys(md_data)[i])
+		}
+		for(var i=0;i<arr.length-1;i++)
+		{
+			var str=arr[i]
+			var num=i
+			for(var j=i+1;j<arr.length;j++)
+			{
+				if(arr[i]>arr[j])
+				{
+					str=arr[j]
+					num=j
+				}
+			}
+			arr[num]=arr[i]
+			arr[i]=str
+		}
+		
+		console.log(arr)
+		md_data=[]/*清空乱序的月份*/
+		for(var i =0;i<arr.length;i++)
+		{
+			md_data[arr[i]]=[]/*装上排好序的月份*/
+		}
+		console.log(md_data)
+		for(var i = 0;i<Object.keys(main_data).length;i++)/*分类日期*/
+		{
+			for(var j=0;j<Object.keys(md_data).length;j++)
+			{
+				if(Object.keys(md_data)[j].toString()==main_data[i]['0'].substr(0,7))
+				{
+					md_data[Object.keys(md_data)[j].toString()].push(main_data[i])
+					break;
+				}
+			}
+		}
+		console.log(md_data)
+		
+		/* var mid = md_data[Object.keys(md_data)[0]];
+		
+		var arr=[];
+		var one={}
+		for(var key in md_data)
+		{
+			one[key]=[]
+			arr.push(one)
+			one={}
+		}
+		arr.sort();
+		console.log(arr)
+       for(var i =0;i<Object.keys(arr).length;i++)
+	   {
+			  console.log(Object.keys(arr)[i]);
+		  for(var j=0;j<Object.keys(md_data).length;j++)
+		  {
+			  console.log(Object.keys(md_data)[j]);
+			if(Object.keys(arr)[i]==Object.keys(md_data)[j])
+			{
+				arr[Object.keys(arr)[i]]=md_data[Object.keys(md_data)[j]]
+			}
+		  }
+       } */
+		/* 
+		md_data[Object.keys(md_data)[1]]=mid
+				
+		console.log(md_data[Object.keys(md_data)[0]]);
+		console.log(md_data[Object.keys(md_data)[1]]); */
+	},
+	})
+	
+	
+	
+	function getVirtulData(year,str) {
+	        // 如果传了year参数就赋值, 没传就默认2017/* 
+			console.log(year)
+			var data = [];
+	        var date = +echarts.number.parseDate(year+'-01-01'); //初始时间
+			console.log(date)
+	        var end = +echarts.number.parseDate(year + '-12-31');
+	        var dayTime = 3600 * 24 * 1000; //一天的毫秒数 */
+	       
+			
+			for(var i=0;i<Object.keys(md_data[str]).length;i++)
+			{
+				data.push([
+					echarts.format.formatTime(
+					'yyyy-MM-dd', +echarts.number.parseDate(md_data[str][i][0].toString())
+					),
+					parseInt(md_data[str][i][1])*100
+					])
+			}
+	        return data;
+	}
+	
+	function make_mycharts()
+	{
+		var div_rele=$("<div>")
+		div_rele.attr("style","width:33%;height:500px;")
+		var mycs=[]
+		for(var i=0;i<Object.keys(md_data).length;i++)
+		{
+			id="table_show"+i
+			div_rele.attr("id",id)
+			$("#reli_container").append(div_rele)
+			mycs.push(echarts.init(document.getElementById(id)))
+			div_rele=$("<div>")
+			div_rele.attr("style","width:33%;height:500px;")
+		}
+		
+		return mycs;
+	}
+	function make_options()
+	{
+		var ops=[]
+		for(var i=0;i<Object.keys(md_data).length;i++)
+		{
+			console.log(Object.keys(md_data)[i].toString());
+			ops.push({
+				tooltip: 
+				{
+				    position: 'top'
+				},
+				calendar:
+				[
+					{
+					    orient: 'vertical',
+					    yearLabel: {
+					        margin: 40
+					    },
+					    monthLabel: {
+					        nameMap: 'cn',
+					        margin: 20
+					    },
+					    cellSize: 60,
+					    range: Object.keys(md_data)[i].toString()//时间
+					}
+				],
+				series: 
+				[
+					{
+					    type: 'effectScatter',
+					    coordinateSystem: 'calendar',
+					    calendarIndex: 0,  //上述calendar数组下标
+					    symbolSize: function (val) {
+					        return val[1] / 40;
+					    },
+					    data: getVirtulData(parseInt(Object.keys(md_data)[i].toString().substr(0,4)),Object.keys(md_data)[i].toString())
+					}
+				]
+			}
+			)
+		}
+		return ops;
+	}
+	var myChart=make_mycharts();/*设置所有的echart和div*/
+			
+	    
+	 option = make_options();
+	
+	for(var i=0;i<Object.keys(md_data).length;i++)
+	{
+		Object.keys(md_data)[i].toString()
+		myChart[i].setOption(option[i]);
+	}
+</script>
+
+<script src="js_xuanfu/jquery.hDialog.js"></script>
+<script>
+		$(function(){
+		
+			var $el = $('.dialog');
+		
+			$el.hDialog();
+			//带标题的
+		
+			$('.demo0').hDialog({width: 1000,height:540});
+		
+		
+			$('.demo10').click(function(){
+		
+				$.tooltip('My God, 出错啦！！！');
+		
+			});
+			//正确文字提示
+		
+			$('.demo11').click(function(){
+		
+				$.tooltip('OK, 操作成功！', 2500, true);
+		
+			});
+			//显示加载
+		
+			$('.demo12').click(function(){
+		
+				//自定义文字： $.showLoading('玩命加载中...');
+		
+				//自定义宽高： $.showLoading('努力加载中...',140,40);
+		
+				$.showLoading();
+		
+			});
+			//移除加载
+		
+			$('.demo13').click(function(){
+		
+				$.hideLoading();
+		
+			});
+			//显示前的回调方法
+		
+			$('.demo14').hDialog({beforeShow: function(){
+		
+				alert('显示前执行');
+		
+			}});
+			//隐藏后的回调方法
+		
+			$('.demo15').hDialog({afterHide: function(){
+		
+				alert('隐藏后执行');
+		
+			}});
+			//fadeOut淡出关闭效果
+		
+			$('.demo16').hDialog({effect: 'fadeOut'});
+			//悬浮触发
+		
+			$('.demo17').hDialog({triggerEvent: 'mouseenter'});
+			//不显示关闭按钮
+		
+			$('.demo18').hDialog({closeHide: false});
+			//返回顶部
+		
+			$.goTop();
+			});
+		
+	</script>

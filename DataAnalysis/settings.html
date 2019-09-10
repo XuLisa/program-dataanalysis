@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>设置DataAnalysis</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Google fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+
+
+
+    <link href="settings/semantic/dist/semantic.min.css" rel="stylesheet" />
+    <link href="settings/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="settings/css/main.css" rel="stylesheet" />
+    <link href="settings/plugins/pacejs/pace.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="settings/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="settings/fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="settings/css/util.css">
+    <link rel="stylesheet" type="text/css" href="settings/css/main1.css">
+    <style>
+        .type_pic:hover{
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+<div class="page" id="main">
+    <!-- Main Navbar-->
+    <header class="header">
+        <nav class="navbar">
+            <!-- Search Box-->
+            <div class="search-box">
+                <button class="dismiss"><i class="icon-close"></i></button>
+                <form id="searchForm" action="#" role="search">
+                    <input type="search" placeholder="What are you looking for..." class="form-control">
+                </form>
+            </div>
+            <div class="container-fluid">
+                <div class="navbar-holder d-flex align-items-center justify-content-between">
+                    <!-- Navbar Header-->
+                    <div class="navbar-header">
+                        <!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
+                        <div class="brand-text d-none d-lg-inline-block"><span>Data </span><strong>Analysis</strong></div>
+                        <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div></a>
+                        <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+                    </div>
+                    <!-- Navbar Menu -->
+                    <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                        <!-- Search-->
+                        <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
+                        <!-- Notifications-->
+                        <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">12</span></a>
+                            <ul aria-labelledby="notifications" class="dropdown-menu">
+                                <li><a rel="nofollow" href="#" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6 new messages </div>
+                                        <div class="notification-time"><small>4 minutes ago</small></div>
+                                    </div></a></li>
+                                <li><a rel="nofollow" href="#" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                                        <div class="notification-time"><small>4 minutes ago</small></div>
+                                    </div></a></li>
+                                <li><a rel="nofollow" href="#" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
+                                        <div class="notification-time"><small>4 minutes ago</small></div>
+                                    </div></a></li>
+                                <li><a rel="nofollow" href="#" class="dropdown-item">
+                                    <div class="notification">
+                                        <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                                        <div class="notification-time"><small>10 minutes ago</small></div>
+                                    </div></a></li>
+                                <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
+                            </ul>
+                        </li>
+                        <!-- Messages                        -->
+                        <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange badge-corner">10</span></a>
+                            <ul aria-labelledby="notifications" class="dropdown-menu">
+                                <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                    <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-body">
+                                        <h3 class="h5">Jason Doe</h3><span>Sent You Message</span>
+                                    </div></a></li>
+                                <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                    <div class="msg-profile"> <img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-body">
+                                        <h3 class="h5">Frank Williams</h3><span>Sent You Message</span>
+                                    </div></a></li>
+                                <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                                    <div class="msg-profile"> <img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-body">
+                                        <h3 class="h5">Ashley Wood</h3><span>Sent You Message</span>
+                                    </div></a></li>
+                                <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="login.html?token_clear=1" class="nav-link logout"> <span class="d-none d-sm-inline">退出</span><i class="fa fa-sign-out"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="page-content d-flex align-items-stretch">
+        <!-- Side Navbar -->
+        <nav class="side-navbar">
+            <!-- Sidebar Header-->
+            <div class="sidebar-header d-flex align-items-center">
+                <div class="avatar"><img src="img/ANEW/school.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                <div class="title">
+                    <h1 class="h4">TKK</h1>
+					<p>开会都在YHT</p>
+                </div>
+            </div>
+            <ul class="list-unstyled">
+                <li><a href="index.html"> <i class="icon-home"></i>主页 </a></li>
+                <li><a href="#"> <i class="icon-grid"></i>用户数据分析 </a></li>
+                <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>个性化 </a></li>
+                <li><a href="#"> <i class="icon-padnote"></i>用户画像 </a></li>
+                <li  class="active"><a href="#exampledropdownDropdown" aria-expanded="true" data-toggle="collapse" class=""> <i class="icon-interface-windows"></i>设置 </a>
+                    <ul id="exampledropdownDropdown" class="list-unstyled collapse show" style="">
+                                            <li id="set_1"><a href="#">基本信息设置</a></li>
+                                            <li id="set_2"><a href="#">地址设置</a></li>
+                                            <li id="set_3"><a href="#">邮箱设置</a></li>
+                                            <li id="set_4"><a href="#">提示选项</a></li>
+                                            <li id="set_5"><a href="#">安全选项</a></li>
+                                        </ul>
+                </li>
+
+            </ul>
+        </nav>
+        <div class="content-inner">
+            <!-- Page Header-->
+            <header class="page-header">
+              <div class="container-fluid">
+            	<input  placeholder="Search"  style="border: 0px solid;width: 100%;height: 100%;font-size:120%;"/>
+              </div>
+            </header>
+            <!-- Breadcrumb-->
+            <div class="breadcrumb-holder container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">主页</a></li>
+                    <li class="breadcrumb-item active">设置            </li>
+                </ul>
+            </div>
+            <!-- Charts Section-->
+            <section class="charts">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 ui equal width left aligned padded grid stackable" style="width: 100%;">
+                            <div class="sixteen wide tablet fourteen wide computer column">
+                                <div class="ui segment">
+                                    <div class="ui tab active" id="set_1_div"  data-tab="profile">
+                                        <form class="ui form segment">
+                                            <h3 class="ui header">
+                                                档案设置
+                                            </h3>
+                                            <div class="ui hidden divider"></div>
+                                            <div class="two fields">
+                                                <div class="field">
+                                                    <label>姓名</label>
+                                                    <input placeholder="姓" name="name" type="text">
+                                                </div>
+                                                <div class="field">
+                                                    <label>性别</label>
+                                                    <div class="ui dropdown fluid selection" tabindex="0"><select name="gender">
+                                                        <option value="">性别</option>
+                                                        <option value="male">男</option>
+                                                        <option value="female">女</option>
+                                                    </select><i class="dropdown icon"></i><div class="default text">性别</div><div class="menu" tabindex="-1"><div class="item" data-value="male">男</div><div class="item" data-value="female">Female</div></div></div>
+                                                </div>
+                                            </div>
+                                            <div class="two fields">
+                                                <div class="field">
+                                                    <label>用户名</label>
+                                                    <input placeholder="用户名" name="username" type="text">
+                                                </div>
+                                                <div class="field">
+                                                    <label>密码</label>
+                                                    <input placeholder="密码" type="password" name="password">
+                                                </div>
+                                            </div>
+                                            <div class="ui blue submit button">更新</div>
+                                            <div class="ui error message"></div>
+                                        </form>
+                                    </div >
+                                    <div class="ui tab" id="set_2_div"  data-tab="settings">
+                                        <form class="ui form segment">
+                                            <h3 class="ui header">
+                                                账号设置
+                                            </h3>
+                                            <div class="ui hidden divider"></div>
+                                            <div class="field">
+                                                <label>客户ID</label>
+                                                <input placeholder="客户ID" name="name" type="text">
+                                            </div>
+                                            <div class="field">
+                                                <label>密钥ID</label>
+                                                <input placeholder="密钥ID" name="name" type="text">
+                                            </div>
+                                            <div class="field">
+                                                <label>App名</label>
+                                                <input placeholder="App名" name="name" type="text">
+                                            </div>
+                                            <div class="field">
+                                                <label>App URL</label>
+                                                <input placeholder="http://example.com" name="name" type="text">
+                                            </div>
+
+                                            <div class="ui blue submit button">更新</div>
+                                            <div class="ui error message"></div>
+                                        </form>
+                                    </div>
+                                    <div class="ui tab" id="set_3_div"  data-tab="emails">
+                                        <div class="ui form">
+                                            <div class="field">
+                                                <div class="ui toggle button">切换</div>
+                                                <div class="ui positive check button">选中</div>
+                                                <div class="ui negative uncheck button">不选中</div>
+                                            </div>
+
+                                            <div class="field">
+                                                <div class="ui test toggle checkbox">
+                                                    <input type="checkbox" checked="checked">
+                                                    <label>允许其他人邀请我加入小组</label>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="ui test toggle checkbox">
+                                                    <input type="checkbox">
+                                                    <label>允许其他人给我发送信息</label>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="ui test toggle checkbox">
+                                                    <input type="checkbox" checked="checked">
+                                                    <label>Anyone follow me</label>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="ui test toggle checkbox">
+                                                    <input type="checkbox" checked="checked">
+                                                    <label>允许其他人发表评论</label>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="ui test toggle checkbox">
+                                                    <input type="checkbox">
+                                                    <label>允许其他人给我发表评论</label>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="ui test toggle checkbox">
+                                                    <input type="checkbox" checked="checked">
+                                                    <label>允许其他人给我发送邮件</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui tab" id="set_4_div"  data-tab="notifications">
+                                        <div class="ui form">
+                                            <div class="field">
+                                                <div class="ui toggle button">切换</div>
+                                                <div class="ui positive check button">选中</div>
+                                                <div class="ui negative uncheck button">不选中</div>
+                                            </div>
+
+                                            <div class="field">
+                                                <div class="ui test slider checkbox">
+                                                    <input type="checkbox">
+                                                    <label>自动监视存储库</label>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="ui test slider checkbox">
+                                                    <input type="checkbox" checked="checked">
+                                                    <label>加入</label>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="ui test slider checkbox">
+                                                    <input type="checkbox">
+                                                    <label>监视</label>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="ui test slider checkbox">
+                                                    <input type="checkbox" checked="checked">
+                                                    <label>电子邮件</label>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="ui test slider checkbox">
+                                                    <input type="checkbox">
+                                                    <label>自定义路由</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui tab" id="set_5_div"  data-tab="security">
+                                        <form class="ui form segment">
+                                            <h3 class="ui header">
+                                                安全设置
+                                            </h3>
+                                            <div class="ui hidden divider"></div>
+                                            <div class="field">
+                                                <label>旧密码</label>
+                                                <input placeholder="Old Password" value="" name="name" type="text">
+                                            </div>
+                                            <div class="field">
+                                                <label>新密码</label>
+                                                <input placeholder="New Password" value="" name="name" type="text">
+                                            </div>
+                                            <div class="field">
+                                                <label>确认新密码</label>
+                                                <input placeholder="New Password Repeat" name="name" type="text">
+                                            </div>
+
+                                            <div class="ui blue submit button">更新</div>
+                                            <div class="ui red submit button">删除账号</div>
+                                            <div class="border rounded">
+                                                <p style="font-size: 30px;">&nbsp;&nbsp;&nbsp;第三方认证：</p>
+                                                <div class="flex-c-m row">
+                                                    <div style="display: flex;margin-right: 10px ">
+                                                        <a href="#" class="login100-social-item bg1">
+															<i class="fa fa-wechat"></i>
+                                                        </a>
+                                                        <p style="margin-top: 13px;margin-left: 29px; font-size: 20px;font-weight: bold;">微信</p>
+                                                    </div>
+                                                    <div style="float:left;width: 1px;height: 30px; background: darkgray;"></div>
+                                                    <div style="display: flex;margin-left: 10px;margin-right: 10px">
+                                                        <a href="#" class="login100-social-item bg2">
+															<i class="fa fa-qq"></i>
+                                                        </a>
+                                                        <p style="margin-top: 13px;margin-left: 29px; font-size: 20px;font-weight: bold;">QQ</p>
+                                                    </div>
+                                                    <div style="float:left;width: 1px;height: 30px; background: darkgray;"></div>
+                                                    <div style="display: flex;margin-left: 10px;margin-right: 10px">
+                                                        <a href="#" class="login100-social-item bg3">
+															<i class="fa fa-weibo"></i>
+                                                        </a>
+                                                        <p style="margin-top: 13px;margin-left: 29px; font-size: 20px;font-weight: bold;">微博</p>
+                                                    </div>
+                                                    <div style="float:left;width: 1px;height: 30px; background: darkgray;"></div>
+                                                    <div style="display: flex;margin-left: 10px">
+                                                        <a href="#" class="login100-social-item bg2">
+															<i class="fa fa-facebook"></i>
+                                                        </a>
+                                                        <p style="margin-top: 13px;margin-left: 29px; font-size: 20px;font-weight: bold;">Facebook</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </div>
+</div>
+
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/popper.js/umd/popper.min.js"> </script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+<script src="vendor/chart.js/Chart.min.js"></script>
+<script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+<script src="js/charts-custom.js"></script>
+<!-- Main File-->
+<script src="js/front.js"></script>
+
+
+<script src="semantic/dist/semantic.min.js"></script>
+<!--semantic-->
+<script src="plugins/cookie/js.cookie.js"></script>
+<script src="plugins/nicescrool/jquery.nicescroll.min.js"></script>
+
+<script data-pace-options='{ "ajax": false }' src="plugins/pacejs/pace.js"></script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+<script>
+    var side_time=0;
+    $("#beside_sidebar").click(function () {
+        if(side_time%2==0)
+        {
+            $(".main").css("width",'100%')
+            $("#sidebar-nav").css("width","0px")
+            $("#hide").attr("src",'img/arrow-right.png')
+        }
+        else {
+            $(".main").attr("style",'')
+            $(".main").attr("class",'main')
+            $("#sidebar-nav").css("width","186px")
+            $("#hide").attr("src",'img/arrow-left.png')
+        }
+        side_time++;
+    });
+    function deal_user_set(number){
+        $("#set_"+number+"_div").show()
+        for(var i=1;i<=5;i++)
+        {
+            if(i!=number)
+            {
+                $("#set_"+i+"_div").hide()
+            }
+        }
+    }
+    $("#set_1").click(function () {
+        deal_user_set(1)
+    })
+    $("#set_2").click(function () {
+        deal_user_set(2)
+    })
+    $("#set_3").click(function () {
+        deal_user_set(3)
+    })
+    $("#set_4").click(function () {
+        deal_user_set(4)
+    })
+    $("#set_5").click(function () {
+        deal_user_set(5)
+    })
+    $("#personal").click(function () {
+        $(".personal_second").toggle()
+    });
+</script>
